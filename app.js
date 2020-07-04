@@ -8,12 +8,53 @@ app.get("/",function(req,res){
 	res.render("home.ejs");
 });
 var sign,name,horoscope;
+var info={};
 
-app.get("/lucky",function (req,res) {
+app.get("/lucky",function(req,res,next){
+	var id="http://ohmanda.com/api/horoscope/"+sign;
+	if(sign){
+		request(id ,function(err,respo,body){
+		if(!err && respo.statusCode==200)
+			{
+				var data=JSON.parse(body);
+				//console.log(data["horoscope"]);
+				horoscope=data["horoscope"];
+				// Now it contains the horoscope...
+				next();
+
+				
+ 			}
+ 		});
+	}
+	else
+		res.redirect("/");
+	
+	
+},function(req,res,next){
+	id="https://zodiacal.herokuapp.com/"+sign;
+	if(sign){
+		request(id ,function(err,respo,body){
+		if(!err && respo.statusCode==200)
+			{
+				var data=JSON.parse(body);
+				info=data;
+				// Now it contains the horoscope...
+				next();
+
+				
+ 			}
+ 		});
+	}
+	else
+		res.redirect("/");
+	
+},function (req,res) {
+	//console.log(info);
 	res.render("dest.ejs",{
  				sign:sign,
  				name:name,
- 				horoscope:horoscope
+ 				horoscope:horoscope,
+ 				info:info
  				});
 	
 });
@@ -56,29 +97,12 @@ app.get("*",function(req,res){
  	if((m==2 && d>=19) || (m==3 && d<=20))
  		sign="pisces";
  	name=req.body.name;
- 	var id="http://ohmanda.com/api/horoscope/"+sign;
-	if(sign){
-		request(id ,function(err,respo,body){
-		if(!err && respo.statusCode==200)
-			{
-				var data=JSON.parse(body);
-				console.log(data["horoscope"]);
-				horoscope=data["horoscope"];
-				// Now it contains the horoscope...
-
-				
- 			}
- 		});
-	}
-	else{
-		res.redirect("/");
-		flag=0;
-	}
-	if(flag)
+ 	
  		res.redirect("/lucky");
 
  	
  })
+
 
 app.listen(3000,function(){
 	console.log("Connected to port 3000");

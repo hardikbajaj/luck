@@ -1,14 +1,33 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
 	<title>Your Page</title>
 	
 </head>
 <body>
 	<a href="/">Back to home page</a>
 
-	<h1> HEY <%=name%> your sign is <%=sign%></h1>
+	<h1> HEY <%=name%>, you are so special being born with <%=sign%> as your zodiac</h1>
+	<li> Many famous personalities, like <%=info[0]["famous_people"][0]%>, <%=info[0]["famous_people"][1]%>, <%=info[0]["famous_people"][2]%>, and <%=info[0]["famous_people"][3]%> were born with your star, you can be the next in this list...Let's see your today's horoscope...
+	
 	<h2> <%= horoscope %></h2>
+	
+	<li> You are blessed with <%=info[0]["how_to_spot"][0] %>, <%=info[0]["how_to_spot"][1] %>
+	<li>You are trying very hard <%=info[0]["secret_wish"][0] %>, no one will understand but keep pushing yourself ...
+	<li>Don't feel bad if people think you are <%=info[0]["bad_traits"][0] %> or <%=info[0]["bad_traits"][1] %>, your close ones know that you are <% for(var i=0;i<info[0]["good_traits"].length-1;i++)
+		{%>
+			<%=info[0]["good_traits"][i]+', '%>
+		<%}%>
+		and <%=info[0]["good_traits"][i]%>
+	<li>People aroud you feel very cofortable with your <%=info[0]["vibe"][0]%> vibes...<br>
+	Never loose hope if today was not your's...Very soon those who hate you will be begging to talk to you, as you are Special!!!
 
+<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
 </body>
 </html>
