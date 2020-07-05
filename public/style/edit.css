@@ -1,0 +1,77 @@
+.bg {
+  /* The image used */
+  background-image: url("a.jpg");
+
+  /* Full height */
+  height: 100%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#hey{
+	color: white;
+	text-align: center;
+}
+
+li{
+	color: rgb(250,250,250,);
+	font-size: 24px;
+}
+.list-group-item {
+  opacity: 1.0;
+  background-color: transparent;
+  color: white;
+}
+
+.list-group-item:hover {
+  opacity: 0.8;
+}
+
+h3{
+	color: white;
+	text-align: center; 
+}
+button{
+	text-align: center;
+}
+.addthis_inline_share_toolbox{
+	color: #075e54;
+	font-size: 30px;
+	margin-top: 10px;
+}
+.btn-outline-secondary{
+	margin-top: 20px;
+	margin-left: 40%;
+}
+#share{
+	color: #075e54;
+	font-size: 30px;
+	margin-top: 10px;
+}
+.jumbotron{
+	background: transparent;
+}
+.btn-success{
+	margin-left:10px;
+
+}
+.display-3{
+	text-align: center;
+}
+#p{
+	text-align: center;
+}
+.backg{
+	background-image: url("c.jpg");
+
+  /* Full height */
+  height: 100%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
